@@ -10,7 +10,7 @@ describe('Test for consent', () => {
     processor = new Processor()
   })
 
-  test('Initially created user have undefined consent', () => {
+  test('Initially created user has undefined consent', () => {
     expect(user.consentGiven).toBeUndefined()
   })
 
@@ -18,7 +18,7 @@ describe('Test for consent', () => {
     expect(processor.checkConsent(user)).toBe(false)
   })
 
-  test('User is adult', () => {
+  test('Processor checks if the user is of legal age', () => {
     expect(processor.isUserAdult(user)).toBe(true)
   })
 
@@ -27,7 +27,7 @@ describe('Test for consent', () => {
     expect(user.consentGiven).toBe(true)
   })
 
-  test('Revoke Consent', () => {
+  test('Revoke previous consent of user', () => {
     processor.revokeConsent(user)
     expect(user.consentGiven).toBe(false)
   })
