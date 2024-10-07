@@ -18,7 +18,11 @@ describe('Test for consent', () => {
     expect(processor.checkConsent(user)).toBe(false)
   })
 
-  test('Processor checks if the user is of legal age', () => {
+  test('Processor checks that the user is underage', () => {
+    expect(processor.isUserAdult(user)).toBe(false)
+  })
+
+  test('Processor checks that the user is of legal age', () => {
     expect(processor.isUserAdult(user)).toBe(true)
   })
 
